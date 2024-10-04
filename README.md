@@ -1,4 +1,4 @@
-# Trading Bot Simulation
+# Trading Estimator Simulation
 
 This project simulates a basic trading bot for a hypothetical stock market. It includes a backend service built with Node.js and Express, and a frontend interface built with React.
 
