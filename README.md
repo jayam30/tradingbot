@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Trading Bot Simulation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project simulates a basic trading bot for a hypothetical stock market. It includes a backend service built with Node.js and Express, and a frontend interface built with React.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+trading-bot/
+├── backend/
+│   ├── src/
+│   │   ├── app.js
+│   │   ├── tradingBot.js
+│   │   └── mockAPI.js
+│   ├── package.json
+│   └── .env
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── components/
+│   │   │   ├── Dashboard.js
+│   │   │   └── TradeHistory.js
+│   │   └── index.js
+│   └── package.json
+└── README.md
+```
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Backend service that monitors stock price changes using mock data
+- Simple trading strategy based on price movements
+- Frontend dashboard to display bot performance and trade history
+- Real-time updates using WebSocket connection
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14+ recommended)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/trading-bot.git
+   cd trading-bot
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install backend dependencies:
+   ```
+   cd backend
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install frontend dependencies:
+   ```
+   cd ../frontend
+   npm install
+   ```
 
-### `npm run eject`
+### Configuration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. In the `backend` folder, create a `.env` file with the following content:
+   ```
+   PORT=3001
+   INITIAL_BALANCE=10000
+   BUY_THRESHOLD=-0.02
+   SELL_THRESHOLD=0.03
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Start the backend server:
+   ```
+   cd backend
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. In a new terminal, start the frontend development server:
+   ```
+   cd frontend
+   npm start
+   ```
 
-## Learn More
+3. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Trading Logic
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The trading bot uses a simple strategy based on price movements:
+- Buy when the stock price drops by 2% (configurable)
+- Sell when the stock price rises by 3% (configurable)
 
-### Code Splitting
+The bot tracks its positions, balance, and overall profit/loss, providing a summary of trades and performance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Usage
 
-### Analyzing the Bundle Size
+The backend includes a mock API (`mockAPI.js`) that simulates real-time stock price data. The trading bot interacts with this API to fetch price updates and make trading decisions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Feel free to fork this repository and submit pull requests for any improvements or additional features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
