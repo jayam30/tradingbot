@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [botState, setBotState] = useState(null);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:3001');
+    const ws = new WebSocket('wss://tradingestimator.onrender.com');
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
