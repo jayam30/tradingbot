@@ -41,32 +41,16 @@ trading-bot/
 
 ### Installation
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/trading-bot.git
-   cd trading-bot
-   ```
-
-2. Install backend dependencies:
+1. Install backend dependencies:
    ```
    cd backend
    npm install
    ```
 
-3. Install frontend dependencies:
+2. Install frontend dependencies:
    ```
    cd ../frontend
    npm install
-   ```
-
-### Configuration
-
-1. In the `backend` folder, create a `.env` file with the following content:
-   ```
-   PORT=3001
-   INITIAL_BALANCE=10000
-   BUY_THRESHOLD=-0.02
-   SELL_THRESHOLD=0.03
    ```
 
 ### Running the Application
